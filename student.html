@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Students | StudentHub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">S</div><div><h2>StudentHub</h2><small>Management System</small></div></div>
+  <p class="nav-heading">MAIN MENU</p>
+  <nav>
+    <a class="nav-link" href="index.html">▦ Dashboard</a>
+    <a class="nav-link active" href="student.html">♙ Students</a>
+    <a class="nav-link" href="attendance.html">✓ Attendance</a>
+    <a class="nav-link" href="report.html">▤ Reports</a>
+  </nav>
+  <div class="sidebar-bottom"><div class="admin-icon">A</div><div><strong>Administrator</strong><small>Management Panel</small></div></div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <div><h1>Students</h1><p>Add and manage all registered students</p></div>
+  <div class="top-date" id="todayLabel"></div>
+</header>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div><h3>Student Management</h3><p>Manage student information</p></div>
+    <button class="primary-btn" id="addStudentBtn">+ Add Student</button>
+  </div>
+  <div class="toolbar">
+    <input type="search" id="studentSearch" placeholder="Search by name, ID, class or email...">
+    <span class="muted" id="studentCount"></span>
+  </div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Student</th><th>Student ID</th><th>Class</th><th>Email</th><th>Phone</th><th>Actions</th></tr></thead>
+    <tbody id="studentsTable"></tbody>
+  </table></div>
+</div>
+</main>
+</div>
+
+<div class="modal-overlay" id="studentModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div><h2 id="modalTitle">Add New Student</h2><p>Enter student details below</p></div>
+      <button class="close-btn" id="closeModal">×</button>
+    </div>
+    <form id="studentForm">
+      <input type="hidden" id="editStudentId">
+      <label>Full Name *</label><input type="text" id="studentName" placeholder="Enter full name" required>
+      <label>Class / Course *</label><input type="text" id="studentClass" placeholder="Enter class" required>
+      <label>Email Address</label><input type="email" id="studentEmail" placeholder="Enter email">
+      <label>Phone Number</label><input type="tel" id="studentPhone" placeholder="Enter phone">
+      <div class="modal-actions"><button type="button" class="secondary-btn" id="cancelModal">Cancel</button><button type="submit" class="primary-btn">Save Student</button></div>
+    </form>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

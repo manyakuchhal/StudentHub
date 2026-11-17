@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Attendance | StudentHub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">S</div><div><h2>StudentHub</h2><small>Management System</small></div></div>
+  <p class="nav-heading">MAIN MENU</p>
+  <nav>
+    <a class="nav-link" href="index.html">▦ Dashboard</a>
+    <a class="nav-link" href="student.html">♙ Students</a>
+    <a class="nav-link active" href="attendance.html">✓ Attendance</a>
+    <a class="nav-link" href="report.html">▤ Reports</a>
+  </nav>
+  <div class="sidebar-bottom"><div class="admin-icon">A</div><div><strong>Administrator</strong><small>Management Panel</small></div></div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <div><h1>Attendance</h1><p>Manage daily student attendance</p></div>
+  <div class="top-date" id="todayLabel"></div>
+</header>
+
+<div class="panel">
+  <div class="panel-heading">
+    <div><h3>Daily Attendance</h3><p>Select date and mark attendance</p></div>
+    <input type="date" id="attendanceDate">
+  </div>
+
+  <div class="attendance-summary">
+    <span class="summary-pill green-pill" id="attendancePresent">Present: 0</span>
+    <span class="summary-pill red-pill" id="attendanceAbsent">Absent: 0</span>
+    <span class="summary-pill gray-pill" id="attendancePending">Not Marked: 0</span>
+  </div>
+
+  <div class="toolbar">
+    <input type="search" id="attendanceSearch" placeholder="Search student...">
+    <button class="primary-btn" id="saveAttendanceBtn">Save Attendance</button>
+  </div>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>Student</th><th>Student ID</th><th>Class</th><th>Attendance Status</th></tr></thead>
+    <tbody id="attendanceTable"></tbody>
+  </table></div>
+  <p class="hint">Attendance is automatically saved after every change.</p>
+</div>
+</main>
+</div>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | StudentHub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon">S</div><div><h2>StudentHub</h2><small>Management System</small></div></div>
+  <p class="nav-heading">MAIN MENU</p>
+  <nav>
+    <a class="nav-link active" href="index.html">▦ Dashboard</a>
+    <a class="nav-link" href="student.html">♙ Students</a>
+    <a class="nav-link" href="attendance.html">✓ Attendance</a>
+    <a class="nav-link" href="report.html">▤ Reports</a>
+  </nav>
+  <div class="sidebar-bottom"><div class="admin-icon">A</div><div><strong>Administrator</strong><small>Management Panel</small></div></div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+  <div><h1>Dashboard</h1><p>Welcome to your Student Management System</p></div>
+  <div class="top-date" id="todayLabel"></div>
+</header>
+
+<div class="welcome">
+  <div><h2>Welcome Back! 👋</h2><p>Manage your students and attendance in one place.</p></div>
+  <a class="primary-btn white-btn" href="student.html">+ Add Student</a>
+</div>
+
+<div class="stats-grid">
+  <div class="stat-card"><div class="stat-icon blue">♙</div><p>Total Students</p><h2 id="totalStudents">0</h2><small>Registered students</small></div>
+  <div class="stat-card"><div class="stat-icon green">✓</div><p>Present Today</p><h2 id="presentToday">0</h2><small>Marked present</small></div>
+  <div class="stat-card"><div class="stat-icon red">✕</div><p>Absent Today</p><h2 id="absentToday">0</h2><small>Marked absent</small></div>
+  <div class="stat-card"><div class="stat-icon purple">%</div><p>Attendance Rate</p><h2 id="attendanceRate">0%</h2><small>Today's percentage</small></div>
+</div>
+
+<div class="panel">
+  <div class="panel-heading"><div><h3>Attendance Overview</h3><p>Choose a date to view statistics</p></div><input type="date" id="dashboardDate"></div>
+  <div class="progress-track"><div id="dashboardProgress" class="progress-fill"></div></div>
+  <div class="progress-label"><span>Present Percentage</span><strong id="progressText">0%</strong></div>
+</div>
+
+<div class="panel">
+  <div class="panel-heading"><div><h3>Recently Added Students</h3><p>Latest registered students</p></div><a class="text-btn" href="student.html">View All →</a></div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Student</th><th>Student ID</th><th>Class</th><th>Email</th></tr></thead>
+    <tbody id="recentStudents"></tbody>
+  </table></div>
+</div>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
